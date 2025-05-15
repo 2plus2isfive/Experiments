@@ -34,8 +34,9 @@
         border: solid 2px #f00;
         display: flex;
         justify-content: center;
-        overflow: scroll;
-        scrollbar-width: none;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: #fff #00000000;
         position: relative;
       }
 
@@ -48,6 +49,9 @@
           max-width: 100vh;
           aspect-ratio: 1/1;
         }
+        #horizontal {
+          opacity: 0;
+        }
       }
 
       /* When the horizontal resolution is higher than the vertical resolution, it uses this CSS. */
@@ -59,10 +63,18 @@
           max-width: 100vh;
           aspect-ratio: 1/1;
         }
+        #vertical {
+          opacity: 0;
+        }
       }
 
       p {
         letter-spacing: 1px;
+      }
+      .detect {
+        position: absolute;
+        top: 0;
+        left: 0;
       }
     </style>
     <meta charset="UTF-8" />
@@ -86,5 +98,7 @@
         </div>
       </div>
     </div>
+    <p class="detect" id="horizontal">horizontal</p>
+    <p class="detect" id="vertical">vertical</p>
   </body>
 </html>
